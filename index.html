@@ -536,20 +536,14 @@
       <div class="message-box" id="videoBox">
         <div class="door door-left"></div>
         <div class="door door-right"></div>
-        <div class="video-content" id="videoContent">
-          <div class="password-prompt" id="passwordPrompt">
-            <span>Enter Password</span>
-            <input type="text" class="password-input" id="passwordInput">
-            <button class="password-submit" onclick="checkPassword()">Submit</button>
-          </div>
-          <video id="videoPlayer" controls>
-            <source src="0719 (2).MP3" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <audio id="audioPlayer" controls autoplay>
-            <source src="https://cdn.pixabay.com/download/audio/2022/03/31/audio_3f6b35294c.mp3?filename=space-ambient-112925.mp3" type="audio/mp3">
-            Your browser does not support the audio tag.
-          </audio>
+        <div class="password-prompt" id="passwordPrompt">
+  <span>Enter Password</span>
+  <input type="text" class="password-input" id="passwordInput">
+  <button class="password-submit" onclick="checkPassword()">Submit</button>
+</div>
+<audio id="audioPlayer" controls autoplay>
+  Your browser does not support the audio tag.
+</audio>
         </div>
       </div>
     </div>
@@ -693,6 +687,11 @@
 जितने अच्छे आप हो, उतने ही हम भी हैं 😉<br>
 और बाकी जो भी हो, आप गेम में बदला ले सकते हो।
 Password है: bhaiyaji@ + दो अंकों की संख्या (जो आपको पता करनी है)।
+<br> but jo bdsk , jo v past ,ya few day before mere set se pen le gaya hai 
+aur use kar ke mere set pe nahi rakha hai
+ <br> bass use ke leye ye video ka
+ <br>password hai pen@28 
+
 <br>
 देखो यार, भैया जी, आपके चेहरे के सामने हम ये बात बोल नहीं सकते थे,
 क्योंकि मैं हर सीनियर की दिल से इज्जत करता हूँ।<br>
@@ -847,24 +846,32 @@ Na koi mujhse baat kare, na main kisi se.<br>
     }
 
     function checkPassword() {
-      const passwordInput = document.getElementById('passwordInput');
-      const passwordPrompt = document.getElementById('passwordPrompt');
-      const videoPlayer = document.getElementById('videoPlayer');
-      const audioPlayer = document.getElementById('audioPlayer');
-      const backgroundAudio = document.getElementById('backgroundAudio');
-      if (passwordInput.value === 'bhaiyaji@28') {
-        passwordPrompt.style.display = 'none';
-        videoPlayer.classList.add('unlocked');
-        audioPlayer.classList.add('unlocked');
-        videoPlayer.muted = false;
-        backgroundAudio.pause();
-        videoPlayer.play().catch(e => console.error('Video playback failed:', e));
-        audioPlayer.play().catch(e => console.error('Audio playback failed:', e));
-      } else {
-        alert('Incorrect password. Please try again.');
-        passwordInput.value = '';
-      }
-    }
+  const passwordInput = document.getElementById('passwordInput');
+  const passwordPrompt = document.getElementById('passwordPrompt');
+  const audioPlayer = document.getElementById('audioPlayer');
+  const backgroundAudio = document.getElementById('backgroundAudio');
+
+  const password = passwordInput.value;
+
+  if (password === 'pen@28') {
+    passwordPrompt.style.display = 'none';
+    audioPlayer.innerHTML = `<source src="0719 (2).mp3" type="audio/mp3">`;
+    audioPlayer.classList.add('unlocked');
+    backgroundAudio.pause();
+    audioPlayer.load();
+    audioPlayer.play().catch(e => console.error('Audio playback failed:', e));
+  } else if (password === 'bhaiyaji@28') {
+    passwordPrompt.style.display = 'none';
+    audioPlayer.innerHTML = `<source src="7577.mp3" type="audio/mp3">`;
+    audioPlayer.classList.add('unlocked');
+    backgroundAudio.pause();
+    audioPlayer.load();
+    audioPlayer.play().catch(e => console.error('Audio playback failed:', e));
+  } else {
+    alert('Incorrect password. Please try again.');
+    passwordInput.value = '';
+  }
+}
 
     particlesJS('particles', {
       particles: {
