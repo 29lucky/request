@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
@@ -851,7 +852,7 @@ Na koi mujhse baat kare, na main kisi se.<br>
       const videoPlayer = document.getElementById('videoPlayer');
       const audioPlayer = document.getElementById('audioPlayer');
       const backgroundAudio = document.getElementById('backgroundAudio');
-      if (passwordInput.value === 'Pen@28') {
+      if (passwordInput.value === 'bhaiyaji@28') {
         passwordPrompt.style.display = 'none';
         videoPlayer.classList.add('unlocked');
         audioPlayer.classList.add('unlocked');
@@ -935,7 +936,7 @@ Na koi mujhse baat kare, na main kisi se.<br>
     function formatTime(seconds) {
       const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
       const secs = (seconds % 60).toString().padStart(2, '0');
-      return ${mins}:${secs};
+      return `${mins}:${secs}`;
     }
 
     function startTimer() {
@@ -1055,7 +1056,7 @@ Na koi mujhse baat kare, na main kisi se.<br>
     }
 
     function updateGameInfo() {
-      gameInfo.textContent = Score: ${score} | Health: ${health} | Level: ${level} | Time: ${formatTime(seconds)} | High Score: ${highScore} | Last Score: ${lastScore};
+      gameInfo.textContent = `Score: ${score} | Health: ${health} | Level: ${level} | Time: ${formatTime(seconds)} | High Score: ${highScore} | Last Score: ${lastScore}`;
     }
 
     function handleGameOver() {
@@ -1159,4 +1160,3 @@ Na koi mujhse baat kare, na main kisi se.<br>
 </body>
 
 </html>
-
